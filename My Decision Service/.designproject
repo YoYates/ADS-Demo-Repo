@@ -1,0 +1,10 @@
+{
+  "description" : "My Decision Service",
+  "groupId" : "cpadmin.basic_service.my_decision_service",
+  "locale" : "en_US",
+  "properties" : {
+    "refactoringEnabled" : false,
+    "tags" : [ ]
+  },
+  "extraProperties" : { }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="My Model">
+  <name>My_Model</name>
+  <uuid>0c7a9799-ccf9-4335-80c0-1edfd741dceb</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#cacb18fa-6712-46dc-9dc1-961fae3bef76"/>
+  <targetRuleProject href="../../My%20Model#e47d4a7a-d5c7-497b-96a4-afb9bb48e9f2"/>
+  <tags key="operationDescription">
+    <value><![CDATA[""]]></value>
+  </tags>
+  <tags key="operationName">
+    <value><![CDATA["My_Model"]]></value>
+  </tags>
+  <tags key="exposedAtRuntime">
+    <value><![CDATA[true]]></value>
+  </tags>
+</com.ibm.rules.studio.model.decisionservice:Operation>

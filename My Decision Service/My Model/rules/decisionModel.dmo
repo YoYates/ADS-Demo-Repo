@@ -16,21 +16,49 @@
         </extensionElements>
         <variable id="node_0_ii" name="Name" typeRef="java.lang.String"/>
     </inputData>
-    <decision id="node_1" name="Weather Advice">
-        <description>Weather Advice</description>
+    <decision id="node_1" name="Daily Advice">
+        <description>Daily Advice</description>
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="java.lang.String" collection="false" name="Name"/>
-                <output bomType="java.lang.String" collection="false" name="Weather Advice"/>
+                <input bomType="java.lang.String" collection="false" name="Weather Advice"/>
+                <output bomType="java.lang.String" collection="false" name="Daily Advice"/>
                 <rule defaultRule="false" href="node_1/Advice.drl" kind="BusinessRule" name="Advice"/>
                 <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_1_ii" name="Weather Advice" typeRef="java.lang.String"/>
+        <variable id="node_1_ii" name="Daily Advice" typeRef="java.lang.String"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
     </decision>
+    <decision id="node_2" name="Weather Advice">
+        <description>Weather Advice</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="first">
+                <input bomType="cpadmin.basic_service.my_decision_service.data.Weather" collection="false" name="Weather"/>
+                <output bomType="java.lang.String" collection="false" name="Weather Advice"/>
+                <rule defaultRule="false" href="node_2/storm%20rule.drl" kind="BusinessRule" name="storm rule"/>
+                <rule defaultRule="false" href="node_2/weather%20table.dmt" kind="DecisionTable" name="weather table"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Weather Advice" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_3" name="Weather">
+        <description>Rain forecast</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="cpadmin.basic_service.my_decision_service.data.Weather" collection="false" name="Weather"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_3_ii" name="Weather" typeRef="cpadmin.basic_service.my_decision_service.data.Weather"/>
+    </inputData>
 </definitions>
 </definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>
